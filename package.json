@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "lint": "nx run-many -t lint --quiet"
+    "lint": "nx affected -t lint --quiet",
+    "lint:ts": "nx affected -t type-check"
   },
   "private": true,
   "dependencies": {
