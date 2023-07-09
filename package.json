@@ -2,7 +2,9 @@
   "name": "@pjchender/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint": "nx run-many -t lint --quiet"
+  },
   "private": true,
   "dependencies": {
     "@swc/helpers": "~0.5.0",

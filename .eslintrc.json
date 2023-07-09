@@ -6,6 +6,28 @@
   "plugins": [
     "@nx"
   ],
+  "extends": [
+    "pjchender"
+  ],
+  "parserOptions": {
+    "tsconfigRootDir": ".",
+    "project": [
+      "./tsconfig.base.json",
+      "./apps/*/tsconfig.json"
+    ]
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.{test,spec}.{ts,tsx}",
+          "**/vite.config.ts",
+          "**/tailwind.config.js"
+        ]
+      }
+    ]
+  },
   "overrides": [
     {
       "files": [
@@ -38,7 +60,8 @@
         "*.tsx"
       ],
       "extends": [
-        "plugin:@nx/typescript"
+        "plugin:@nx/typescript",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
       "rules": {}
     },
