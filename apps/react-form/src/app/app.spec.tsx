@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import App from './app';
 
@@ -9,7 +9,7 @@ describe('App', () => {
   });
 
   it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
-    expect(getByText(/Welcome react-form/gi)).toBeTruthy();
+    render(<App />);
+    expect(screen.getByText(/Welcome react-form/gi)).toBeInTheDocument();
   });
 });
